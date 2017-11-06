@@ -5,11 +5,8 @@ process.stdout.write('prompt: ');
 process.stdin.on('data', function(data) {
   var cmd = data.toString().trim();
   commands[cmd]();
-  // if(cmd === 'pwd'){
-  //   commands.pwd();
-  // } if(cmd === 'date'){
-  //   commands.date();
-  // }
+  setTimeout(function(){
+    process.stdout.write('\nprompt: ');
+  }, 10);
   // process.stdout.write('You typed: ' + cmd);
-  // process.stdout.write('\nprompt: ');
 })
