@@ -24,10 +24,24 @@ module.exports = {
       process.stdout.write(args);
     }
   },
-  head: function(args){
+  cat: function(args){
     fs.readFile(args, (err, data) => {
       if(err) throw err;
       process.stdout.write(data);
+    })
+  },
+  head: function(args){
+    fs.readFile(args, (err, data) => {
+      var dataHead = data.toString().split(/\n/).slice(0, 5).join('\n');
+      if(err) throw err;
+      process.stdout.write(dataHead);
+    })
+  },
+  tail: function(args){
+    fs.readFile(args, (err, data) => {
+      var dataTail = data.toString().split(/\n/).slice(-5).join('\n');
+      if(err) throw err;
+      process.stdout.write(dataTail);
     })
   }
 }
