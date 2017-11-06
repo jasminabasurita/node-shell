@@ -16,6 +16,19 @@ module.exports = {
         process.stdout.write(file.toString() + '\n');
       })
     })
+  },
+  echo: function(args){
+    if(args[0] === '$' && process.env[args.slice(1)]) {
+      process.stdout.write(process.env[args.slice(1)]);
+    } else {
+      process.stdout.write(args);
+    }
+  },
+  head: function(args){
+    fs.readFile(args, (err, data) => {
+      if(err) throw err;
+      process.stdout.write(data);
+    })
   }
 }
 
