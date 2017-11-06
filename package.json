@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jasminabasurita/node-shell/issues"
   },
-  "homepage": "https://github.com/jasminabasurita/node-shell#readme"
+  "homepage": "https://github.com/jasminabasurita/node-shell#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
 }

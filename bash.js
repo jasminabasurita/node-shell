@@ -9,6 +9,7 @@ process.stdin.on('data', function(data) {
   commands[cmd](args);
   setTimeout(function(){
     process.stdout.write('\nprompt: ');
-  }, 1000);
+  }, 500);
+  // process.stdout.write('You typed: ' + cmd);
   // process.stdout.write('You typed: ' + cmd);
 })
